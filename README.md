@@ -21,6 +21,13 @@
 <img width="46.4%" alt="Даг Чан в магентовом вихре" src="https://github.com/user-attachments/assets/e717be10-3513-4525-88ef-a01723e4a210" />
 <img width="51.6%" alt="Даг Чан с лампочкой" src="https://github.com/user-attachments/assets/2e9481fe-f9cf-4935-8dcc-07d9ed027e2b" />
 
+# 17.10.2026
+### Мне лень чето сегодня делать, так что вот еще картиночки.
+<img width="49%" alt="Даг Чан и неоновый череп в глазу" src="https://github.com/user-attachments/assets/62212d6a-0ab7-42de-9bdb-c48824f1dc2e" />
+<img width="49%" alt="Дэг Чан в неоновой геометрии" src="https://github.com/user-attachments/assets/ef661653-6ce9-435d-b77a-943a331adb93" />
+
+<img width="49%" alt="Даг Чан в фиолетовом неоновом осколке" src="https://github.com/user-attachments/assets/bc4201da-ad74-4537-b40b-6c41630b2946" />
+<img width="49%" alt="Даг Чан в ледяном ореоле" src="https://github.com/user-attachments/assets/358becb4-57f7-4911-9b79-24e52dfbf74d" />
 
 
 
