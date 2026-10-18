@@ -29,6 +29,29 @@
 <img width="49%" alt="Даг Чан в фиолетовом неоновом осколке" src="https://github.com/user-attachments/assets/bc4201da-ad74-4537-b40b-6c41630b2946" />
 <img width="49%" alt="Даг Чан в ледяном ореоле" src="https://github.com/user-attachments/assets/358becb4-57f7-4911-9b79-24e52dfbf74d" />
 
+# 18.10.2026
+### Седня ничего полезного не делал, но есть еще более смешные картиночки.
+
+<p align="center">
+  <img width="32%" alt="Даг Чан в жёлтом защитном костюме" src="https://github.com/user-attachments/assets/30fce9fb-c5de-4987-bbb1-bd8acd0f6221" />
+  <img width="32%" alt="Чиби в панике над бурлящей фритюрницей" src="https://github.com/user-attachments/assets/1dc64bbb-ea6a-4e53-8200-a5d7add7d264" />
+  <img width="32%" alt="Зернистый кадр с Даг Чан" src="https://github.com/user-attachments/assets/b585ec52-a828-497c-a0bd-a6b6502349c4" />
+</p>
+
+<p align="center">
+  <img width="48%" alt="Чиби Даг Чан у дверного глазка" src="https://github.com/user-attachments/assets/103fe25f-d5e9-4dc2-ba16-5ee9b510d72f" />
+  <img width="48%" alt="Розовый хвостик на кремовом плече" src="https://github.com/user-attachments/assets/e8b51f44-dc70-4f34-afea-0cf4d955edd2" />
+</p>
+<p align="center">
+  <img width="48%" alt="Селфи с розоволосой девушкой и безликим великаном" src="https://github.com/user-attachments/assets/43645338-f189-48b6-a042-c2390208c58a" />
+  <img width="48%" alt="Цветочный силуэт с разорванной цепью" src="https://github.com/user-attachments/assets/8f14175c-b93f-4316-b600-d4be0bb29670" />
+</p>
+
+<p align="center">
+  <img width="48%" alt="Даг Чан: пульт, бутылка и чипсы" src="https://github.com/user-attachments/assets/4ab728f9-efdb-45aa-be63-f1f702d214ba" />
+  <img width="48%" alt="Даг Чан в шоке от банана" src="https://github.com/user-attachments/assets/081bda5e-eb58-467a-9d75-308e60fdb588" />
+</p>
+
 
 
 
