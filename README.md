@@ -32,29 +32,29 @@
 # 18.10.2026
 ### Седня ничего полезного не делал, но есть еще более смешные картиночки.
 
-<p align="center">
-  <img width="32%" alt="Даг Чан в жёлтом защитном костюме" src="https://github.com/user-attachments/assets/30fce9fb-c5de-4987-bbb1-bd8acd0f6221" />
-  <img width="32%" alt="Чиби в панике над бурлящей фритюрницей" src="https://github.com/user-attachments/assets/1dc64bbb-ea6a-4e53-8200-a5d7add7d264" />
-  <img width="32%" alt="Зернистый кадр с Даг Чан" src="https://github.com/user-attachments/assets/b585ec52-a828-497c-a0bd-a6b6502349c4" />
-</p>
+<img width="33.3%" alt="Даг Чан в жёлтом защитном костюме" src="https://github.com/user-attachments/assets/30fce9fb-c5de-4987-bbb1-bd8acd0f6221" />
+<img width="30.3%" alt="Чиби в панике над бурлящей фритюрницей" src="https://github.com/user-attachments/assets/1dc64bbb-ea6a-4e53-8200-a5d7add7d264" />
+<img width="34.4%" alt="Зернистый кадр с Даг Чан" src="https://github.com/user-attachments/assets/b585ec52-a828-497c-a0bd-a6b6502349c4" />
 
-<p align="center">
-  <img width="48%" alt="Чиби Даг Чан у дверного глазка" src="https://github.com/user-attachments/assets/103fe25f-d5e9-4dc2-ba16-5ee9b510d72f" />
-  <img width="48%" alt="Розовый хвостик на кремовом плече" src="https://github.com/user-attachments/assets/e8b51f44-dc70-4f34-afea-0cf4d955edd2" />
-</p>
-<p align="center">
-  <img width="48%" alt="Селфи с розоволосой девушкой и безликим великаном" src="https://github.com/user-attachments/assets/43645338-f189-48b6-a042-c2390208c58a" />
-  <img width="48%" alt="Цветочный силуэт с разорванной цепью" src="https://github.com/user-attachments/assets/8f14175c-b93f-4316-b600-d4be0bb29670" />
-</p>
+<img width="49%" alt="Чиби Даг Чан у дверного глазка" src="https://github.com/user-attachments/assets/103fe25f-d5e9-4dc2-ba16-5ee9b510d72f" />
+<img width="49%" alt="Розовый хвостик на кремовом плече" src="https://github.com/user-attachments/assets/e8b51f44-dc70-4f34-afea-0cf4d955edd2" />
 
-<p align="center">
-  <img width="48%" alt="Даг Чан: пульт, бутылка и чипсы" src="https://github.com/user-attachments/assets/4ab728f9-efdb-45aa-be63-f1f702d214ba" />
-  <img width="48%" alt="Даг Чан в шоке от банана" src="https://github.com/user-attachments/assets/081bda5e-eb58-467a-9d75-308e60fdb588" />
-</p>
+<img width="49%" alt="Селфи с розоволосой девушкой и безликим великаном" src="https://github.com/user-attachments/assets/43645338-f189-48b6-a042-c2390208c58a" />
+<img width="49%" alt="Цветочный силуэт с разорванной цепью" src="https://github.com/user-attachments/assets/8f14175c-b93f-4316-b600-d4be0bb29670" />
 
+<img width="44.2%" alt="Даг Чан: пульт, бутылка и чипсы" src="https://github.com/user-attachments/assets/4ab728f9-efdb-45aa-be63-f1f702d214ba" />
+<img width="53.8%" alt="Даг Чан в шоке от банана" src="https://github.com/user-attachments/assets/081bda5e-eb58-467a-9d75-308e60fdb588" />
 
+# 19.10.2026
+### Сегодня был увлекательнийший день военной кафедры, после которого хочется просто хочется обыденной жизни, но это не повод не вставить картиночки.
+<img width="48.9%" alt="Даг Чан среди голубей на мостовой" src="https://github.com/user-attachments/assets/0d9b8ad6-0b9e-42d9-b473-022b9cab79ae" />
+<img width="49.1%" alt="Розовая коса мягко лежит на ступени" src="https://github.com/user-attachments/assets/78c539c6-bc09-441c-ac4e-c41ec31747ad" />
 
+<img width="42.6%" alt="Даг Чан на террасе у моря" src="https://github.com/user-attachments/assets/a89c8383-52d1-450b-8238-689474e17e39" />
+<img width="55.4%" alt="Даг Чан выглядывает из-за холста" src="https://github.com/user-attachments/assets/191b8d29-12b4-42ac-ad0f-c885852e748c" />
 
+<img width="53.8%" alt="Розоволосая Даг Чан созерцает закат" src="https://github.com/user-attachments/assets/e5717a54-1abc-4a6a-b348-f933acda5d23" />
+<img width="44.2%" alt="Гармоничные пропорции Даг Чан у моря" src="https://github.com/user-attachments/assets/142b77f5-b3c5-4814-a44d-48a9d1afb25d" />
 
 
 
