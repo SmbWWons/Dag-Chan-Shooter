@@ -56,6 +56,24 @@
 <img width="53.8%" alt="Розоволосая Даг Чан созерцает закат" src="https://github.com/user-attachments/assets/e5717a54-1abc-4a6a-b348-f933acda5d23" />
 <img width="44.2%" alt="Гармоничные пропорции Даг Чан у моря" src="https://github.com/user-attachments/assets/142b77f5-b3c5-4814-a44d-48a9d1afb25d" />
 
+# 20.10.2026
+### Ну я сделал одну анимацию, из... ну... миллиона? Но к более важным новостям, я прошел на А ранг Bury The Light в Rift of the Necrodancer.
+### В честь этого вот картиночки с интересным стилем и посылом, они философские, ну как фильм по бекрумсам.
+
+<img width="100%" alt="Даг Чан_ вихрь спиральных глаз" src="https://github.com/user-attachments/assets/2707474f-fd65-43f6-a29a-7ac225252ef3" />
+
+<img width="32.6%" alt="Даг Чан_ винтажный коллаж взглядов" src="https://github.com/user-attachments/assets/bfc54993-693a-44f9-8765-d6b97ae09541" />
+<img width="32.6%" alt="Даг Чан и сияющее окно" src="https://github.com/user-attachments/assets/904696d7-4f79-4ac5-952d-c4b04cf89189" />
+<img width="32.6%" alt="Даг Чан с бургером в бизнес-костюме" src="https://github.com/user-attachments/assets/7405141f-5546-4090-95df-3170d447ce6d" />
+
+<img width="27.8%" alt="Даг Чан с глазом-мишенью" src="https://github.com/user-attachments/assets/db313bc2-65a0-403b-aec2-74df7ab5d5dd" />
+<img width="33.2%" alt="Розоволосая девушка выглядывает из стены" src="https://github.com/user-attachments/assets/955d3fe9-e982-4cf5-acd4-9e8366990c0f" />
+<img width="37%" alt="Девушка в ладонях" src="https://github.com/user-attachments/assets/1e49e121-e884-4b93-a843-892a8cf418d8" />
+
+<img width="25.4%" alt="Даг Чан_ ярость и внезапный шок" src="https://github.com/user-attachments/assets/86f8be5a-156f-489e-b7af-2fdbacb2c22f" />
+<img width="36.3%" alt="Неоновый бант с одной розовой бусиной" src="https://github.com/user-attachments/assets/bfde24df-24e4-4ec4-a653-d92b7fe67aa8" />
+<img width="36.3%" alt="Лактозная непереносимость Даг Чан" src="https://github.com/user-attachments/assets/a3848202-edbe-4934-b975-9facba692655" />
+
 
 
 
