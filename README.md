@@ -57,8 +57,7 @@
 <img width="44.2%" alt="Гармоничные пропорции Даг Чан у моря" src="https://github.com/user-attachments/assets/142b77f5-b3c5-4814-a44d-48a9d1afb25d" />
 
 # 20.10.2026
-### Ну я сделал одну анимацию, из... ну... миллиона? Но к более важным новостям, я прошел на А ранг Bury The Light в Rift of the Necrodancer.
-### В честь этого вот картиночки с интересным стилем и посылом, они философские, ну как фильм по бекрумсам.
+### Ну я сделал одну анимацию, из... ну... миллиона? Но к более важным новостям, я прошел на А ранг Bury The Light в Rift of the Necrodancer. В честь этого вот картиночки с интересным стилем и посылом, они философские, ну как фильм по бекрумсам.
 
 <img width="100%" alt="Даг Чан_ вихрь спиральных глаз" src="https://github.com/user-attachments/assets/2707474f-fd65-43f6-a29a-7ac225252ef3" />
 
@@ -74,6 +73,17 @@
 <img width="36.3%" alt="Неоновый бант с одной розовой бусиной" src="https://github.com/user-attachments/assets/bfde24df-24e4-4ec4-a653-d92b7fe67aa8" />
 <img width="36.3%" alt="Лактозная непереносимость Даг Чан" src="https://github.com/user-attachments/assets/a3848202-edbe-4934-b975-9facba692655" />
 
+# 21.10.2026
+### Сегодня я задумался над покупкой новых колонок, так как старые издают белый шум, да и увидев технические требования ремейка Шрека 2, понял что моя 5070 теряет актуальность. Так что вот, сегодня техническая ночь (ну ридми обновляю в 2:30 ночи), по этому случаю вот еще картиночки с Даг Чан:
+<img width="29%" alt="Даг Чан в ярком Windows-мире" src="https://github.com/user-attachments/assets/bcce0fee-224c-4236-93a1-3b21270abc9f" />
+<img width="34%" alt="Капча Даг Чан_ милый девятичастный портрет" src="https://github.com/user-attachments/assets/172ab962-4363-4269-b730-deff3795a8fa" />
+<img width="35%" alt="Даг Чан и лаймовая игровая консоль" src="https://github.com/user-attachments/assets/4da77344-7c85-449f-b0ae-1b58c98cbc93" />
 
+<img width="30.6%" alt="Меланхоличный портрет Даг Чан с механическим глазом" src="https://github.com/user-attachments/assets/cb344624-169b-47e6-9ba2-0482797f0013" />
+<img width="29.1%" alt="Dag Chan в ретро-коллаже Windows XP" src="https://github.com/user-attachments/assets/a1184812-64d2-4d2a-a33b-ea24d7f602e1" />
+<img width="38.3%" alt="Лаймовая консоль с розоволосой героиней" src="https://github.com/user-attachments/assets/c68f021d-bc88-4881-98a4-c2ad8ed89869" />
+
+<img width="47.9%" alt="Портрет Даг Чан среди схем и кода" src="https://github.com/user-attachments/assets/e3acfaf1-4d9a-40fc-b259-ff69abfd45ea" />
+<img width="50.1%" alt="Даг Чан в ретро Microsoft Paint" src="https://github.com/user-attachments/assets/9f9285cc-a782-47aa-8e70-4979ef464e1a" />
 
 
