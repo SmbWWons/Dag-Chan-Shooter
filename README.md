@@ -95,3 +95,21 @@
 <img width="53.1%" alt="Крошечный Даг Чан с огромной головой" src="https://github.com/user-attachments/assets/54264367-a58d-4bc8-a0bc-f740c128fe14" />
 <img width="44.9%" alt="Точная правка реплики в комиксе" src="https://github.com/user-attachments/assets/080aa748-87fc-45ab-9690-b37ac48cbd84" />
 
+# 22.10.2026
+### Сегодня у меня траурный день, очень много дел и я, навряд ли, смогу поиграть в свои любимейшие игры. Вот блин, весь день сижу и думаю, какой же кайф было бы поиграть, столько инди и ААА проектов, которые действительно стоят внимания, ну и которые запомнились и понравились лично мне больше всего. По такому поводу сегодня будут игровые картиночки.
+
+<img width="33.3%" alt="Даг Чан против костяного противника" src="https://github.com/user-attachments/assets/b3c4ef0a-e7bb-4e72-81e9-bec6631b91c2" />
+<img width="36.6%" alt="Розоволосая героиня у зеркала с розами" src="https://github.com/user-attachments/assets/badc6eab-5ce7-4d84-b10f-5260563fd722" />
+<img width="28.1%" alt="Крылатый страж и Даг Чан" src="https://github.com/user-attachments/assets/27ad8b2e-0872-4495-80b2-5f0e89456118" />
+
+<img width="31%" alt="Даг Чан перед сияющим мотыльком" src="https://github.com/user-attachments/assets/3bf8b9a4-21cb-4955-b84d-7c047cc4f965" />
+<img width="39.3%" alt="Даг Чан в оранжевом рабочем комбинезоне" src="https://github.com/user-attachments/assets/67190376-d394-4b4a-9229-61c8baad4fae" />
+<img width="27.7%" alt="Розоволосая воительница с топором и татуировкой" src="https://github.com/user-attachments/assets/09054ff3-7a77-431c-8676-62c01b80881b" />
+
+<img width="33.7%" alt="Розоволосая девушка с двумя хвостами" src="https://github.com/user-attachments/assets/121364ff-90e5-4878-9ad7-ae4533c87fe3" />
+<img width="36.5%" alt="Даг Чан в розовой юбке" src="https://github.com/user-attachments/assets/7512a7af-f16b-460d-ad34-f3dfcf83d2a6" />
+<img width="27.8%" alt="Аниме-портрет Даг Чан с надписью IT'S ME" src="https://github.com/user-attachments/assets/61eaa873-aa84-4b4e-b1bc-7e09b71d628f" />
+
+<img width="31.1%" alt="Крошечная Даг Чан в мрачной пещере" src="https://github.com/user-attachments/assets/4a240242-62c8-44a3-83f9-5872cabc7132" />
+<img width="33.8%" alt="Даг Чан и сияющая золотая сфера" src="https://github.com/user-attachments/assets/bbe3cb10-b536-4b86-ba46-e6e609387da1" />
+<img width="33.1%" alt="Даг Чан в синей парке с голограммой" src="https://github.com/user-attachments/assets/f42c6373-0e08-4346-b0cf-5b6e92231cd4" />
