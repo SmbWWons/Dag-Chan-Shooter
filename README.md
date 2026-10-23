@@ -113,3 +113,16 @@
 <img width="31.1%" alt="Крошечная Даг Чан в мрачной пещере" src="https://github.com/user-attachments/assets/4a240242-62c8-44a3-83f9-5872cabc7132" />
 <img width="33.8%" alt="Даг Чан и сияющая золотая сфера" src="https://github.com/user-attachments/assets/bbe3cb10-b536-4b86-ba46-e6e609387da1" />
 <img width="33.1%" alt="Даг Чан в синей парке с голограммой" src="https://github.com/user-attachments/assets/f42c6373-0e08-4346-b0cf-5b6e92231cd4" />
+
+# 23.10.2026
+### Только сейчас осознал, что по-настоящему началась осень. Для этого всего лишь пришлось 2 часа погорбатиться на субботнике в парке ДГТУ (почему субботники проводятся в любой день кроме субботы?). Убирать листья граблями это достаточно медитативный процесс, кругом только желтые листья, и ты, с граблями. На закате я минут на 15 залип тупо смотря как листики падают с деревьев, красота... А чуть не забыл, картиночки, осенние картиночки...
+
+<img width="100%" alt="Даг Чан в осеннем лесу" src="https://github.com/user-attachments/assets/ae49ac18-4713-4b96-b85a-520e431aac47" />
+
+<img width="27.6%" alt="Розоволосая в танце среди листьев" src="https://github.com/user-attachments/assets/6941432b-e27c-4dea-987a-d35e65436c63" />
+<img width="37%" alt="Розоволосая девушка на сияющей осенней тропе" src="https://github.com/user-attachments/assets/6c3c2275-dbd8-4959-8451-7bd47e8b6621" />
+<img width="33.4%" alt="Розоволосая девочка и лесные белки" src="https://github.com/user-attachments/assets/74bb9e42-d44a-4d70-a19a-292b6f4d8610" />
+
+<img width="40.6%" alt="Селфи Даг Чан среди осенних листьев" src="https://github.com/user-attachments/assets/f2719ca9-247c-474b-9c8e-65b713b01564" />
+<img width="57.4%" alt="Даг Чан среди кленовых листьев" src="https://github.com/user-attachments/assets/4013217c-db74-4e0a-8fd0-60bb8b31bdcd" />
+
