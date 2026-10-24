@@ -126,3 +126,12 @@
 <img width="40.6%" alt="Селфи Даг Чан среди осенних листьев" src="https://github.com/user-attachments/assets/f2719ca9-247c-474b-9c8e-65b713b01564" />
 <img width="57.4%" alt="Даг Чан среди кленовых листьев" src="https://github.com/user-attachments/assets/4013217c-db74-4e0a-8fd0-60bb8b31bdcd" />
 
+# 24.10.2026
+### ЧУТЬ НЕ ЗАБЫЛ. ВСЕХ С СУББОТОЙ!!!
+
+<img width="30.2%" alt="Розоволосая женщина с кружками в таверне" src="https://github.com/user-attachments/assets/4d979999-cfb8-485f-bfa2-9b09216b820e" />
+<img width="31.8%" alt="Даг Чан за столом с пивом" src="https://github.com/user-attachments/assets/5af33f7b-3f3c-4301-8098-48c430802dae" />
+<img width="36%" alt="Даг Чан за стойкой с пивом" src="https://github.com/user-attachments/assets/8b1b907b-ccfa-468d-ae28-49655796fb99" />
+
+<img width="36.1%" alt="Даг Чан за игровым столом" src="https://github.com/user-attachments/assets/53778324-3aeb-4759-8945-8db506299b2a" />
+<img width="61.9%" alt="Комичная аниме-реакция с бутылкой пива" src="https://github.com/user-attachments/assets/7bc8de4d-4216-48b3-9ea7-1c789da11e46" />
