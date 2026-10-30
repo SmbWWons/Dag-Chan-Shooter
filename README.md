@@ -135,3 +135,55 @@
 
 <img width="36.1%" alt="Даг Чан за игровым столом" src="https://github.com/user-attachments/assets/53778324-3aeb-4759-8945-8db506299b2a" />
 <img width="61.9%" alt="Комичная аниме-реакция с бутылкой пива" src="https://github.com/user-attachments/assets/7bc8de4d-4216-48b3-9ea7-1c789da11e46" />
+
+# 30.10.2026
+### Последнее ридми... Завтра защита... Не сказать что я недоволен своей игрой, но как по мне было бы чуть больше времени вышло бы намного круче, в сумме на проект я потратил, хз, часов 10? Буду сам с собой честен, я отвечал только за 3д, текстуры и анимацию, ну не мое писать код, так что верный помощник чат гпт справился на отлично. Вот даже обновлений не было целую неделю, в какой-то степени специально. Картиночки конечно будут, это уже моя внегласная традиция для обновления ридми, но сегодня будет прям Магнум-Опус по картиночкам, на них я потратил тоже много времени. Думаю через часик-два выложу последнюю версию на гитхаб, ну что, удачи мне, тебе, маме, папе, дедушке моей собаки завтра.
+
+<img width="32%" alt="Медная статуя Даг Чан над гаванью" src="https://github.com/user-attachments/assets/e51c16a3-b5f2-40fa-bb33-910b90c3a199" />
+<img width="32%" alt="Робкий портрет Даг Чан на синем фоне" src="https://github.com/user-attachments/assets/cbd836b3-8ba6-42af-86f8-87f0e133c50b" />
+<img width="34%" alt="Даг Чан в матроске, чиби" src="https://github.com/user-attachments/assets/fa954514-ea0f-4ae8-ba9e-ddd12b9f1767" />
+
+<img width="31.3%" alt="Даг Чан с розовой бензопилой" src="https://github.com/user-attachments/assets/367b0e8a-bb68-4939-9760-2a385bde783f" />
+<img width="31.9%" alt="Даг Чан с бургером на диване" src="https://github.com/user-attachments/assets/0e97009c-c42d-4c1c-a392-bcb759019f60" />
+<img width="34.8%" alt="Розоволосая девушка в белом смирительном жакете" src="https://github.com/user-attachments/assets/4296e904-22f8-467e-90d8-5fad31f63952" />
+
+<img width="32.6%" alt="Даг Чан с сердцем из рук" src="https://github.com/user-attachments/assets/482d39fe-7db1-4da4-af77-10420a7ecf9b" />
+<img width="32.7%" alt="Даг Чан в неоновом розовом вихре" src="https://github.com/user-attachments/assets/1fd2b25c-9b42-40e3-b8cb-ddf7b5fd700b" />
+<img width="32.7%" alt="Улыбающийся Даг Чан указывает на щёки" src="https://github.com/user-attachments/assets/8df8980f-f0c5-42c7-b63d-d88f12882dc4" />
+
+<img width="31.7%" alt="Даг Чан с сердечком и спиральным взглядом" src="https://github.com/user-attachments/assets/4b2dcad7-5822-4ee4-a535-9479b33bcba6" />
+<img width="32.3%" alt="Даг Чан с новой маркировкой" src="https://github.com/user-attachments/assets/50717a94-efa5-424f-9dbc-3603be3f4f18" />
+<img width="34%" alt="Даг Чан с пушистыми ушками" src="https://github.com/user-attachments/assets/10a5d14f-7339-4634-9b2e-87798f3fcbbe" />
+
+<img width="32.1%" alt="Даг Чан в сером свитшоте" src="https://github.com/user-attachments/assets/32726a99-fe6f-45f5-b75f-5eec9f6e3147" />
+<img width="32.3%" alt="Даг Чан и пират в VHS-бэкрумах" src="https://github.com/user-attachments/assets/44b382c6-156f-4a4e-ba2a-be822253d0f7" />
+<img width="33.6%" alt="Даг Чан в золотом свете сцены" src="https://github.com/user-attachments/assets/013158f9-1c1c-48d0-a119-8dae89c5aef3" />
+
+<img width="49%" alt="Даг Чан в оливковом спортивном костюме" src="https://github.com/user-attachments/assets/a7f0f7ca-d353-4bd4-8d1c-d04ad7e757f9" />
+<img width="49%" alt="Неоновая героиня с розовыми туфлями" src="https://github.com/user-attachments/assets/2f2f39c7-aa13-498e-8bfd-e07ce344c67d" />
+
+<img width="31.4%" alt="Чиби Даг Чан с двойным лайком" src="https://github.com/user-attachments/assets/198942f6-856c-41d7-9c70-38d0ea227699" />
+<img width="33.2%" alt="Девушка с тостом у холодильника" src="https://github.com/user-attachments/assets/edc6b826-79a2-4fd7-9ff3-736ff6605927" />
+<img width="33.4%" alt="Дуэт Даг Чан и Фредди Фазбера" src="https://github.com/user-attachments/assets/81c8c853-93ba-4306-880e-bb50f88d83fe" />
+
+<img width="32.4%" alt="Плачущая кукла с розовыми волосами" src="https://github.com/user-attachments/assets/3edef377-d7ed-4529-b156-84fc40cccf36" />
+<img width="32.6%" alt="Даг Чан в чёрно-золотом силуэте" src="https://github.com/user-attachments/assets/f21cb9ac-bfca-42ed-9dcd-e76b9af2c5b6" />
+<img width="33%" alt="Даг Чан за сырным ужином" src="https://github.com/user-attachments/assets/48e98a09-7b94-4da2-b7aa-df52df722beb" />
+
+<img width="32.2%" alt="Утомлённый взгляд Даг Чан в зеркале" src="https://github.com/user-attachments/assets/5dae2010-21e4-4f85-970b-70aa53960b96" />
+<img width="32.8%" alt="Даг Чан в неоновом глитч-постере" src="https://github.com/user-attachments/assets/07c696e1-c9b8-4255-b476-1bf51c21f751" />
+<img width="33%" alt="Даг Чан в чёрном костюме держит Землю" src="https://github.com/user-attachments/assets/43a8ca40-4ec4-43b4-9fd1-7541b749bf9c" />
+
+<img width="31.8%" alt="Даг Чан смотрит на рыбку" src="https://github.com/user-attachments/assets/3b85ef24-d918-4239-9980-20cc9ffee80f" />
+<img width="32.2%" alt="Аниме-девушка и робот с пистолетом" src="https://github.com/user-attachments/assets/d867b820-8655-4f9f-817f-8497236451ec" />
+<img width="34%" alt="Даг Чан и гигантская рука" src="https://github.com/user-attachments/assets/da7f15d8-214d-4751-a261-a6e32a7c3271" />
+
+<img width="32.7%" alt="Даг Чан с розовыми хвостами" src="https://github.com/user-attachments/assets/facaf094-fbcd-4a34-9bdb-4ac9742b4599" />
+<img width="32.7%" alt="Розоволосая девушка выдыхает мягкий пар" src="https://github.com/user-attachments/assets/6b8d6583-801e-4cc6-bef0-96c56eeb65f3" />
+<img width="32.6%" alt="Даг Чан щурится у зелёного знака Money" src="https://github.com/user-attachments/assets/d702639d-3415-4a77-a28e-8b5e78f5f238" />
+
+<img width="48.6%" alt="Волшебница с двумя розовыми хвостами" src="https://github.com/user-attachments/assets/ba7a2f5c-4bbf-408f-9939-f159b0f1d130" />
+<img width="49.4%" alt="Даг Чан в чёрно-коралловом матросском образе" src="https://github.com/user-attachments/assets/0546c4cb-6cf7-44eb-ae40-ee3755f4a77b" />
+
+<img width="44.4%" alt="Испуганная Даг Чан с гигантским глазом" src="https://github.com/user-attachments/assets/16028ed5-8bd3-4a74-8831-15417e7ade60" />
+<img width="53.6%" alt="Уставшая Даг Чан прикрывает лицо" src="https://github.com/user-attachments/assets/009250a8-ea04-45ee-8c97-f5206b33eb21" />
