@@ -1,81 +1,69 @@
 using System;
 using UnityEngine;
 
-// One point of authority for health. One unit is one cell on the existing HUD.
+/// <summary>Принимает команды урона и лечения, изменяет модель и выполняет действия Unity при смерти.</summary>
 [DisallowMultipleComponent]
 public class HealthController : MonoBehaviour
 {
     [SerializeField, Min(1)] private int maxHealth = 15;
     [SerializeField] private bool disappearOnDeath;
-    public enum UltimateBarStatus { Charging, Ready, Active }
-    public float UltimateCharge { get; private set; } = 1f;
-    public UltimateBarStatus UltimateStatus { get; private set; } = UltimateBarStatus.Ready;
-    public event Action<float, UltimateBarStatus> UltimateChanged;
-    /// <summary>
-    /// Ограничивает заряд ульты диапазоном от 0 до 1.
-    /// Только при изменении заряда или статуса сохраняет данные и уведомляет интерфейс событием UltimateChanged.
-    /// </summary>
-    public void SetUltimateStatus(float charge, UltimateBarStatus status)
-    {
-        charge = Mathf.Clamp01(charge);
-        if (Mathf.Approximately(UltimateCharge, charge) && UltimateStatus == status) return;
-        UltimateCharge = charge; UltimateStatus = status;
-        UltimateChanged?.Invoke(charge, status);
-    }
-    private int currentHealth;
-    public int MaxHealth => maxHealth;
-    public int CurrentHealth => currentHealth;
-    public bool IsDead => currentHealth <= 0;
+    private HealthModel model;
+    private bool applyingDamage;
+    private Vector3 hitPoint, hitDirection;
+    public HealthModel Model { get { EnsureModel(); return model; } }
+    public int MaxHealth => Model.MaxHealth;
+    public int CurrentHealth => Model.CurrentHealth;
+    public bool IsDead => Model.IsDead;
     public event Action<int, int> Changed;
     public event Action Died;
     public event Action<Vector3, Vector3> Damaged;
 
-    /// <summary>
-    /// Заполняет текущее здоровье из maxHealth, не допуская значения меньше единицы.
-    /// Выполняется отдельно у игрока и каждого созданного врага.
-    /// </summary>
-    private void Awake() { currentHealth = Mathf.Max(1, maxHealth); }
-    /// <summary>
-    /// Упрощённая перегрузка для урона без точного попадания.
-    /// Передаёт количество, позицию объекта и нулевое направление полной версии TakeDamage и возвращает её результат.
-    /// </summary>
+    /// <summary>Создаёт модель до первого игрового действия; повторный вызов не сбрасывает ХП.</summary>
+    private void Awake() { EnsureModel(); }
+    /// <summary>Связывает события чистой модели с эффектами и существующими игровыми подписчиками.</summary>
+    private void EnsureModel()
+    {
+        if (model != null) return;
+        model = new HealthModel(maxHealth);
+        model.Changed += OnModelChanged;
+        model.Died += OnModelDied;
+    }
+    /// <summary>Передаёт новые ХП и данные попадания до события смерти, чтобы успели появиться желейные кусочки.</summary>
+    private void OnModelChanged(int current, int maximum)
+    {
+        Changed?.Invoke(current, maximum);
+        if (applyingDamage) Damaged?.Invoke(hitPoint, hitDirection);
+    }
+    /// <summary>Оповещает игровые системы и при необходимости удаляет погибшего врага.</summary>
+    private void OnModelDied()
+    {
+        Died?.Invoke();
+        if (disappearOnDeath) { gameObject.SetActive(false); Destroy(gameObject); }
+    }
+    /// <summary>Применяет урон без точной точки попадания.</summary>
     public bool TakeDamage(int amount = 1) => TakeDamage(amount, transform.position, Vector3.zero);
-    /// <summary>
-    /// Отклоняет неположительный урон и удары по мёртвому объекту, затем уменьшает ХП до минимума ноль.
-    /// Сначала вызывает Changed и Damaged, затем при смерти Died и при disappearOnDeath скрывает и удаляет объект.
-    /// Такой порядок даёт эффекту кусочков получить данные до удаления врага.
-    /// </summary>
-    public bool TakeDamage(int amount, Vector3 hitPoint, Vector3 hitDirection)
+    /// <summary>Запоминает координаты попадания для эффектов и передаёт изменение ХП модели.</summary>
+    public bool TakeDamage(int amount, Vector3 point, Vector3 direction)
     {
-        if (amount <= 0 || IsDead) return false;
-        currentHealth = Mathf.Max(0, currentHealth - amount);
-        Changed?.Invoke(currentHealth, maxHealth);
-        Damaged?.Invoke(hitPoint, hitDirection);
-        if (IsDead)
-        {
-            Died?.Invoke();
-            if (disappearOnDeath)
-            {
-                // Hide and remove colliders immediately; Destroy completes at end of frame.
-                gameObject.SetActive(false);
-                Destroy(gameObject);
-            }
-        }
-        return true;
+        hitPoint = point; hitDirection = direction; applyingDamage = true;
+        try { return Model.TakeDamage(amount); }
+        finally { applyingDamage = false; }
     }
-    /// <summary>
-    /// Восстанавливает положительное количество ХП живому объекту, ограничивая результат максимумом.
-    /// Вызывает Changed; воскресить умершего этим методом нельзя.
-    /// </summary>
-    public void Heal(int amount = 1)
+    /// <summary>Передаёт модели команду лечения.</summary>
+    public void Heal(int amount = 1) { Model.Heal(amount); }
+    /// <summary>Обрабатывает отладочные действия только для игрока и только при разрешённом вводе.</summary>
+    private void Update()
     {
-        if (amount <= 0 || IsDead) return;
-        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
-        Changed?.Invoke(currentHealth, maxHealth);
+        if (!GetComponent<PlayerMovement>() || MonitorPauseController.InputBlocked) return;
+        if (DagChanInput.DamagePressed) TakeDamage();
+        if (DagChanInput.HealPressed) Heal();
     }
-    /// <summary>
-    /// При редактировании Inspector исправляет maxHealth, если значение меньше единицы.
-    /// Текущее игровое здоровье этот метод не пересчитывает.
-    /// </summary>
+    /// <summary>Ограничивает настройку максимума в Inspector.</summary>
     private void OnValidate() { maxHealth = Mathf.Max(1, maxHealth); }
+    /// <summary>Снимает внутренние подписки при удалении компонента.</summary>
+    private void OnDestroy()
+    {
+        if (model == null) return;
+        model.Changed -= OnModelChanged; model.Died -= OnModelDied;
+    }
 }

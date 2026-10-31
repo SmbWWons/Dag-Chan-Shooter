@@ -34,9 +34,11 @@ public sealed class UltimateAttackController : MonoBehaviour
     public float BurstInterval => burstInterval;
     public int BurstsFired { get; private set; }
 
+    public UltimateModel Model { get; } = new UltimateModel();
+
     public float ActiveRemaining => Phase == UltimatePhase.Active ? Mathf.Max(0f, phaseEndsAt - Time.time) : 0f;
     /// <summary>
-    /// После игровой логики передаёт актуальное состояние полоски ульты в HealthController.
+    /// После игровой логики передаёт актуальное состояние полоски в отдельную UltimateModel.
     /// Оттуда обновление получает интерфейс.
     /// </summary>
     private void LateUpdate() { PublishBarStatus(); }
@@ -46,13 +48,12 @@ public sealed class UltimateAttackController : MonoBehaviour
     /// </summary>
     private void PublishBarStatus()
     {
-        if (!health) return;
         float charge = Phase == UltimatePhase.Active ? ActiveRemaining / activeDuration :
             Phase == UltimatePhase.Disconnecting ? 0f :
             Phase == UltimatePhase.Cooldown ? 1f - CooldownRemaining / cooldown : 1f;
-        var status = Phase == UltimatePhase.Ready ? HealthController.UltimateBarStatus.Ready :
-            IsBusy ? HealthController.UltimateBarStatus.Active : HealthController.UltimateBarStatus.Charging;
-        health.SetUltimateStatus(charge, status);
+        var status = Phase == UltimatePhase.Ready ? UltimateBarStatus.Ready :
+            IsBusy ? UltimateBarStatus.Active : UltimateBarStatus.Charging;
+        Model.SetStatus(charge, status);
     }
 
     /// <summary>

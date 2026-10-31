@@ -29,71 +29,49 @@ public class ChainsawHealthBar : MonoBehaviour
     private int currentPortraitIndex = -1;
     private Coroutine noiseRoutine;
 
-    /// <summary>
-    /// Если здоровье не назначено, ищет игрока и его HealthController.
-    /// Подписывает интерфейс через BindHealth либо показывает полный запас ячеек при отсутствии контроллера.
-    /// </summary>
+    private HealthModel healthModel;
+    private UltimateModel ultimateModel;
+    /// <summary>Подключает модели игрока; интерфейс не изменяет игровые данные.</summary>
     private void Start()
     {
         if (!health) { var player = FindFirstObjectByType<PlayerMovement>(); if (player) health = player.GetComponent<HealthController>(); }
         if (health) BindHealth(health); else SetCells(maxCells, true);
     }
-
-    /// <summary>
-    /// Отписывается от прежнего здоровья и подключается к Changed и UltimateChanged нового.
-    /// Сразу синхронизирует максимум ХП, ячейки, портрет и полоску ульты, не ожидая следующего изменения.
-    /// </summary>
+    /// <summary>Сохраняет назначение игрока и связывает представление с моделями здоровья и ульты.</summary>
     public void BindHealth(HealthController value)
     {
-        if (health) { health.Changed -= OnHealthChanged; health.UltimateChanged -= OnUltimateChanged; }
-        health = value;
-        if (!health) return;
-        maxCells = health.MaxHealth;
-        health.Changed += OnHealthChanged;
-        health.UltimateChanged += OnUltimateChanged;
-        OnUltimateChanged(health.UltimateCharge, health.UltimateStatus);
-        SetCells(health.CurrentHealth, true);
+        Unsubscribe(); health = value;
+        healthModel = health ? health.Model : null;
+        var ultimate = health ? health.GetComponent<UltimateAttackController>() : null;
+        ultimateModel = ultimate ? ultimate.Model : null;
+        if (isActiveAndEnabled) Subscribe();
     }
-    /// <summary>
-    /// При повторном включении подключает уже назначенный HealthController.
-    /// BindHealth предварительно снимает подписки, поэтому обработчики не накапливаются.
-    /// </summary>
+    /// <summary>Подписывает представление на данные и сразу рисует их актуальные значения.</summary>
+    private void Subscribe()
+    {
+        Unsubscribe();
+        if (healthModel != null) { healthModel.Changed += OnHealthChanged; maxCells = healthModel.MaxHealth; SetCells(healthModel.CurrentHealth, true); }
+        if (ultimateModel != null) { ultimateModel.Changed += OnUltimateChanged; OnUltimateChanged(ultimateModel.Charge, ultimateModel.Status); }
+    }
+    /// <summary>Снимает подписки без изменения модели или её состояния.</summary>
+    private void Unsubscribe()
+    {
+        if (healthModel != null) healthModel.Changed -= OnHealthChanged;
+        if (ultimateModel != null) ultimateModel.Changed -= OnUltimateChanged;
+    }
+    /// <summary>Восстанавливает отображение после повторного включения Canvas.</summary>
     private void OnEnable() { if (health) BindHealth(health); }
-    /// <summary>
-    /// Отписывает канвас от событий здоровья и ульты.
-    /// Выключенный интерфейс больше не получает их обновления.
-    /// </summary>
-    private void OnDisable() { if (health) { health.Changed -= OnHealthChanged; health.UltimateChanged -= OnUltimateChanged; } }
-    /// <summary>
-    /// Выставляет заполнение полоски по переданному заряду.
-    /// Зелёный цвет применяется только при Ready, остальные состояния используют цвет зарядки.
-    /// </summary>
-    private void OnUltimateChanged(float charge, HealthController.UltimateBarStatus status)
+    /// <summary>Останавливает получение событий выключенным представлением.</summary>
+    private void OnDisable() { Unsubscribe(); }
+    /// <summary>Рисует заряд ульты красным, а полную готовность зелёным.</summary>
+    private void OnUltimateChanged(float charge, UltimateBarStatus status)
     {
         if (!ultimateFill) return;
         ultimateFill.fillAmount = charge;
-        ultimateFill.color = status == HealthController.UltimateBarStatus.Ready ? ultimateReadyColor : ultimateChargingColor;
+        ultimateFill.color = status == UltimateBarStatus.Ready ? ultimateReadyColor : ultimateChargingColor;
     }
-    /// <summary>
-    /// Обновляет максимальное число ячеек и передаёт текущее здоровье в SetCells.
-    /// Урон этот обработчик самостоятельно не вычисляет.
-    /// </summary>
-    private void OnHealthChanged(int current, int maximum)
-    {
-        maxCells = maximum;
-        SetCells(current);
-    }
-    /// <summary>
-    /// При разрешённом игровом вводе реагирует на отладочные действия Damage и Heal.
-    /// Изменение здоровья передаётся соответствующим методам и не выполняется на паузе.
-    /// </summary>
-    private void Update()
-    {
-        if(MonitorPauseController.InputBlocked)return;
-        if(DagChanInput.DamagePressed)TakeDamage();
-        if(DagChanInput.HealPressed)Heal();
-    }
-
+    /// <summary>Обновляет представление ХП по событию модели.</summary>
+    private void OnHealthChanged(int current, int maximum) { maxCells = maximum; SetCells(current); }
     /// <summary>
     /// Ограничивает число ячеек и вычисляет долю заполнения от максимального здоровья.
     /// Обновляет зелёную заливку и портрет с учётом запроса мгновенного отображения.
@@ -164,22 +142,4 @@ public class ChainsawHealthBar : MonoBehaviour
         noiseRoutine = null;
     }
 
-    // Можно вызывать из других скриптов или из UI-кнопок
-    /// <summary>
-    /// Передаёт потерю ячеек HealthController, если он назначен.
-    /// В запасном режиме без контроллера изменяет только локальное отображение через SetCells.
-    /// </summary>
-    public void TakeDamage(int cellsLost = 1)
-    {
-        if (health) health.TakeDamage(cellsLost); else SetCells(currentCells - cellsLost);
-    }
-
-    /// <summary>
-    /// Передаёт восстановление ячеек HealthController.
-    /// Без контроллера обновляет только локальное число отображаемых ячеек.
-    /// </summary>
-    public void Heal(int cellsGained = 1)
-    {
-        if (health) health.Heal(cellsGained); else SetCells(currentCells + cellsGained);
-    }
 }

@@ -7,19 +7,15 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class MonitorMenuSettings : MonoBehaviour
 {
-    private const string SensitivityKey="DagChan.MouseSensitivity";
-    private const string RtxKey="DagChan.Rtx10Fps";
-    private PlayerMovement player;
+    private MenuSettingsController controller;
+    private MenuSettingsModel model;
     private MonitorPauseController pause;
-    private MonitorGraphicsMode graphics;
-    private int previousTarget,previousVsync;
     private RectTransform leftPanel,rightPanel;
     private CanvasGroup group;
     private Text sensitivityLabel;
     private Slider slider;
     private Toggle rtxToggle;
     private Font font;
-    private DagChanAudio audioSettings;
     private Slider musicSlider,effectsSlider;
     private Toggle voiceToggle;
     private Text musicLabel,effectsLabel;
@@ -29,61 +25,32 @@ public sealed class MonitorMenuSettings : MonoBehaviour
     public Slider EffectsSlider=>effectsSlider;
     public Toggle VoiceToggle=>voiceToggle;
     public bool VoiceWarningVisible=>voiceWarning && voiceWarning.activeSelf;
-    public float Sensitivity {get;private set;}
-    public bool RtxMode {get;private set;}
+    public float Sensitivity => model != null ? model.Sensitivity : .3f;
+    public bool RtxMode => model != null && model.RtxMode;
     public Slider SensitivitySlider=>slider;
     public Toggle RtxToggle=>rtxToggle;
-    /// <summary>
-    /// Находит игрока, аудиосистему, контроллер паузы и графический режим.
-    /// Сохраняет исходные ограничения кадров и VSync, затем загружает чувствительность и выбранный режим из PlayerPrefs.
-    /// </summary>
+    /// <summary>Находит контроллер и подписывается на модель; View отвечает только за элементы меню.</summary>
     private void Awake()
     {
-        audioSettings=DagChanAudio.Instance;
         pause=GetComponent<MonitorPauseController>();
-        foreach(var candidate in FindObjectsByType<PlayerMovement>(FindObjectsInactive.Exclude,FindObjectsSortMode.None))
-            if(!candidate.transform.parent || !candidate.transform.parent.GetComponentInParent<PlayerMovement>(true)){player=candidate;break;}
-        graphics=GetComponent<MonitorGraphicsMode>();if(!graphics)graphics=gameObject.AddComponent<MonitorGraphicsMode>();
-        graphics.Configure(player?player.GetComponent<Camera>():Camera.main);
-        previousTarget=Application.targetFrameRate==10?-1:Application.targetFrameRate;previousVsync=QualitySettings.vSyncCount;
-        SetSensitivity(PlayerPrefs.GetFloat(SensitivityKey,player?player.mouseSensitivity:.3f),false);
-        SetRtxMode(PlayerPrefs.GetInt(RtxKey,1)!=0,false);
+        controller=GetComponent<MenuSettingsController>();
+        if(!controller)controller=gameObject.AddComponent<MenuSettingsController>();
+        model=controller.Model; model.Changed+=Render;
     }
     /// <summary>
     /// Публичный обработчик изменения чувствительности.
     /// Передаёт значение полной перегрузке с разрешением сохранить настройку.
     /// </summary>
     public void SetSensitivity(float value){SetSensitivity(value,true);}
-    /// <summary>
-    /// Ограничивает чувствительность, применяет её к PlayerMovement и обновляет подпись и ползунок без повторного события.
-    /// При save записывает значение в PlayerPrefs.
-    /// </summary>
-    private void SetSensitivity(float value,bool save)
-    {
-        Sensitivity=Mathf.Clamp(value,.05f,1.5f);
-        if(player)player.mouseSensitivity=Sensitivity;
-        if(slider)slider.SetValueWithoutNotify(Sensitivity);
-        if(sensitivityLabel)sensitivityLabel.text="Чувствительность: "+Sensitivity.ToString("0.00",CultureInfo.InvariantCulture);
-        if(save){PlayerPrefs.SetFloat(SensitivityKey,Sensitivity);PlayerPrefs.Save();}
-    }
+    /// <summary>Передаёт команду изменения чувствительности контроллеру.</summary>
+    private void SetSensitivity(float value,bool save) { controller.SetSensitivity(value,save); }
     /// <summary>
     /// Публичный обработчик галочки графического режима.
     /// Вызывает полную перегрузку с сохранением пользовательского выбора.
     /// </summary>
     public void SetRtxMode(bool value){SetRtxMode(value,true);}
-    /// <summary>
-    /// Передаёт режим в MonitorGraphicsMode и выключает VSync.
-    /// Для включённого режима задаёт 10 FPS, для выключенного снимает лимит значением минус один; синхронизирует галочку и при необходимости сохраняет выбор.
-    /// </summary>
-    private void SetRtxMode(bool value,bool save)
-    {
-        RtxMode=value;
-        if(graphics)graphics.SetMode(value);
-        QualitySettings.vSyncCount=0;
-        Application.targetFrameRate=value?10:-1;
-        if(rtxToggle)rtxToggle.SetIsOnWithoutNotify(value);
-        if(save){PlayerPrefs.SetInt(RtxKey,value?1:0);PlayerPrefs.Save();}
-    }
+    /// <summary>Передаёт команду графического режима контроллеру.</summary>
+    private void SetRtxMode(bool value,bool save) { controller.SetRtxMode(value,save); }
     /// <summary>
     /// Однократно создаёт левое меню, правые настройки и окно предупреждения поверх изображения мониторов.
     /// Подключает EventSystem к Input Actions, назначает события кнопок и выставляет текущие чувствительность, громкости и галочки.
@@ -108,7 +75,7 @@ public sealed class MonitorMenuSettings : MonoBehaviour
         rightPanel=Rect("Right Monitor",full,new Vector2(440,270));
         leftPanel.gameObject.AddComponent<CanvasGroup>();rightPanel.gameObject.AddComponent<CanvasGroup>();
         Label("МЕНЮ",leftPanel,new Vector2(0,105),new Vector2(400,45),27,TextAnchor.MiddleCenter);
-        Button("Продолжить",leftPanel,new Vector2(0,27),()=>pause.Resume());
+        Button("Продолжить",leftPanel,new Vector2(0,27),()=>controller.Resume());
         Button("Выход",leftPanel,new Vector2(0,-57),ExitGame);
         Label("НАСТРОЙКИ",rightPanel,new Vector2(0,127),new Vector2(420,30),23,TextAnchor.MiddleLeft);
         sensitivityLabel=Label("",rightPanel,new Vector2(0,94),new Vector2(420,26),19,TextAnchor.MiddleLeft);
@@ -119,11 +86,22 @@ public sealed class MonitorMenuSettings : MonoBehaviour
         effectsSlider=MakeSlider("Effects Volume",rightPanel,-44,0,1,SetEffectsVolume);
         voiceToggle=MakeToggle("Музыка с голосом",rightPanel,-80,RequestVoiceMusic,19);
         rtxToggle=MakeToggle("RTX RT ТРАСИРОВКА ПУТИ\nDLSS5 DLAA MODE",rightPanel,-123,SetRtxMode,15);
-        SetSensitivity(Sensitivity,false);rtxToggle.SetIsOnWithoutNotify(RtxMode);
-        musicSlider.SetValueWithoutNotify(audioSettings.MusicVolume);effectsSlider.SetValueWithoutNotify(audioSettings.EffectsVolume);
-        voiceToggle.SetIsOnWithoutNotify(audioSettings.VoiceEnabled);UpdateAudioLabels();
         BuildVoiceWarning(full);
+        Render();
         UpdateLayout();
+    }
+    /// <summary>Рисует состояние модели без повторного вызова обработчиков ползунков и галочек.</summary>
+    private void Render()
+    {
+        if(model==null)return;
+        if(slider)slider.SetValueWithoutNotify(model.Sensitivity);
+        if(sensitivityLabel)sensitivityLabel.text="Чувствительность: "+model.Sensitivity.ToString("0.00",CultureInfo.InvariantCulture);
+        if(rtxToggle)rtxToggle.SetIsOnWithoutNotify(model.RtxMode);
+        if(musicSlider)musicSlider.SetValueWithoutNotify(model.MusicVolume);
+        if(effectsSlider)effectsSlider.SetValueWithoutNotify(model.EffectsVolume);
+        if(voiceToggle)voiceToggle.SetIsOnWithoutNotify(model.VoiceEnabled);
+        if(voiceWarning)voiceWarning.SetActive(model.VoiceWarningVisible);
+        UpdateAudioLabels();
     }
     /// <summary>
     /// Создаёт Slider с дорожкой, заливкой и ручкой в указанном контейнере.
@@ -150,55 +128,29 @@ public sealed class MonitorMenuSettings : MonoBehaviour
         var check=Rect("Checkmark",box,new Vector2(17,17));var checkImage=check.gameObject.AddComponent<Image>();checkImage.color=new Color(.12f,.9f,.9f);
         toggle.targetGraphic=image;toggle.graphic=checkImage;Label(title,rect,new Vector2(21,0),new Vector2(368,40),size,TextAnchor.MiddleLeft);toggle.onValueChanged.AddListener(changed);return toggle;
     }
-    /// <summary>
-    /// Передаёт громкость в DagChanAudio и обновляет проценты возле ползунков.
-    /// Сама аудиосистема сразу применяет и сохраняет значение.
-    /// </summary>
-    public void SetMusicVolume(float value){audioSettings.SetMusicVolume(value);UpdateAudioLabels();}
-    /// <summary>
-    /// Меняет общую громкость эффектов через DagChanAudio и обновляет подписи.
-    /// Подписанные звуковые источники получают изменение сразу.
-    /// </summary>
-    public void SetEffectsVolume(float value){audioSettings.SetEffectsVolume(value);UpdateAudioLabels();}
+    /// <summary>Передаёт пользовательскую громкость музыки контроллеру.</summary>
+    public void SetMusicVolume(float value) { controller.SetMusicVolume(value); }
+    /// <summary>Передаёт пользовательскую громкость эффектов контроллеру.</summary>
+    public void SetEffectsVolume(float value) { controller.SetEffectsVolume(value); }
     /// <summary>
     /// Показывает текущую громкость музыки и эффектов в целых процентах.
     /// Проверяет ссылки на текст, поскольку вызывается и во время построения меню.
     /// </summary>
     private void UpdateAudioLabels()
     {
-        if(musicLabel)musicLabel.text="Музыка: "+Mathf.RoundToInt(audioSettings.MusicVolume*100)+"%";
-        if(effectsLabel)effectsLabel.text="Звуковые эффекты: "+Mathf.RoundToInt(audioSettings.EffectsVolume*100)+"%";
+        if(musicLabel)musicLabel.text="Музыка: "+Mathf.RoundToInt(model.MusicVolume*100)+"%";
+        if(effectsLabel)effectsLabel.text="Звуковые эффекты: "+Mathf.RoundToInt(model.EffectsVolume*100)+"%";
     }
-    /// <summary>
-    /// При выключении заглушает голос и закрывает окно.
-    /// При попытке включения оставляет галочку снятой и показывает предупреждение с выбранной кнопкой отказа; голос до подтверждения не становится слышимым.
-    /// </summary>
+    /// <summary>Передаёт запрос голоса контроллеру; модель определит необходимость предупреждения.</summary>
     public void RequestVoiceMusic(bool enabled)
     {
-        if(!enabled){audioSettings.SetVoiceEnabled(false);voiceToggle.SetIsOnWithoutNotify(false);if(voiceWarning)voiceWarning.SetActive(false);return;}
-        if(audioSettings.VoiceEnabled)return;
-        voiceToggle.SetIsOnWithoutNotify(false);voiceWarning.SetActive(true);
-        var button=voiceWarning.GetComponentsInChildren<Button>(true)[1];UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(button.gameObject);
+        controller.RequestVoiceMusic(enabled);
+        if(VoiceWarningVisible && EventSystem.current) EventSystem.current.SetSelectedGameObject(voiceWarning.GetComponentsInChildren<Button>(true)[1].gameObject);
     }
-    /// <summary>
-    /// При открытом предупреждении включает голос и галочку без повторного события переключателя.
-    /// Закрывает окно и возвращает выделение на переключатель.
-    /// </summary>
-    public void ConfirmVoiceMusic()
-    {
-        if(!VoiceWarningVisible)return;
-        audioSettings.SetVoiceEnabled(true);voiceToggle.SetIsOnWithoutNotify(true);voiceWarning.SetActive(false);
-        if(EventSystem.current)EventSystem.current.SetSelectedGameObject(voiceToggle.gameObject);
-    }
-    /// <summary>
-    /// Выключает голос, снимает галочку, закрывает предупреждение и возвращает выделение.
-    /// Дорожки продолжают играть без перезапуска и потери синхронизации.
-    /// </summary>
-    public void CancelVoiceMusic()
-    {
-        audioSettings.SetVoiceEnabled(false);voiceToggle.SetIsOnWithoutNotify(false);if(voiceWarning)voiceWarning.SetActive(false);
-        if(EventSystem.current)EventSystem.current.SetSelectedGameObject(voiceToggle.gameObject);
-    }
+    /// <summary>Передаёт подтверждение и возвращает выделение переключателю.</summary>
+    public void ConfirmVoiceMusic() { controller.ConfirmVoiceMusic(); if(EventSystem.current && voiceToggle)EventSystem.current.SetSelectedGameObject(voiceToggle.gameObject); }
+    /// <summary>Передаёт отказ контроллеру и восстанавливает выделение.</summary>
+    public void CancelVoiceMusic() { controller.CancelVoiceMusic(); if(EventSystem.current && voiceToggle)EventSystem.current.SetSelectedGameObject(voiceToggle.gameObject); }
     /// <summary>
     /// Создаёт затемнение поверх меню и панель с вопросом и предоставленным изображением.
     /// Добавляет кнопки подтверждения и отказа и первоначально скрывает окно.
@@ -288,24 +240,10 @@ public sealed class MonitorMenuSettings : MonoBehaviour
         panel.anchoredPosition=offset;
         float scale=Screen.width/(1920*fit.x)*zoom;panel.localScale=Vector3.one*scale;
     }
-    /// <summary>
-    /// Сохраняет настройки, затем останавливает Play Mode в редакторе или вызывает Application.Quit в сборке.
-    /// Способ выхода выбирается директивой UNITY_EDITOR при компиляции.
-    /// </summary>
-    public void ExitGame()
-    {
-        PlayerPrefs.Save();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying=false;
-#else
-        Application.Quit();
-#endif
-    }
-    /// <summary>
-    /// Возвращает исходный лимит кадров и VSync, сохранённые при создании компонента.
-    /// Настройки запуска поэтому не остаются глобально активными после его завершения.
-    /// </summary>
-    private void OnDestroy(){Application.targetFrameRate=previousTarget;QualitySettings.vSyncCount=previousVsync;}
+    /// <summary>Передаёт команду выхода контроллеру меню.</summary>
+    public void ExitGame() { controller.ExitGame(); }
+    /// <summary>Отключает подписку уничтоженного представления.</summary>
+    private void OnDestroy() { if(model!=null)model.Changed-=Render; }
 }
 
 
